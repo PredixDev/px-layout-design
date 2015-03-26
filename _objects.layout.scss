@@ -6,32 +6,36 @@
 @import '../px-functions-design/tools.functions';
 
 /**
- * The inuitcss layout system uses `box-sizing: border-box;` and
- * `display: inline-block;` to create an extremely powerful, flexible
+ * The Predix Experience layout system uses `box-sizing: border-box;` and
+ * `display: flex;` to create an extremely powerful, flexible
  * alternative to the traditional grid system. Combine the layout items with
  * the widths found in `trumps.widths`.
  */
 
 // Predefine the variables below in order to alter and enable specific features.
-$inuit-layout-namespace         : $inuit-namespace !default;
+$inuit-layout-namespace             : $inuit-namespace !default;
 
-$inuit-layout-gutter            : $inuit-base-spacing-unit !default;
-$inuit-layout-gutter--tiny      : quarter($inuit-layout-gutter) !default;
-$inuit-layout-gutter--small     : halve($inuit-layout-gutter) !default;
-$inuit-layout-gutter--large     : double($inuit-layout-gutter) !default;
-$inuit-layout-gutter--huge      : quadruple($inuit-layout-gutter) !default;
+$inuit-layout-gutter                : quarter($inuit-base-spacing-unit) !default;
+$inuit-layout-gutter--tiny          : quarter($inuit-layout-gutter) !default;
+$inuit-layout-gutter--small         : halve($inuit-layout-gutter) !default;
+$inuit-layout-gutter--large         : double($inuit-layout-gutter) !default;
+$inuit-layout-gutter--huge          : quadruple($inuit-layout-gutter) !default;
 
-$inuit-enable-layout--tiny      : false !default;
-$inuit-enable-layout--small     : false !default;
-$inuit-enable-layout--large     : false !default;
-$inuit-enable-layout--huge      : false !default;
-$inuit-enable-layout--flush     : false !default;
-$inuit-enable-layout--rev       : false !default;
-$inuit-enable-layout--middle    : false !default;
-$inuit-enable-layout--bottom    : false !default;
-$inuit-enable-layout--right     : false !default;
-$inuit-enable-layout--center    : false !default;
-$inuit-enable-layout--auto      : false !default;
+$inuit-enable-layout--tiny          : false !default;
+$inuit-enable-layout--small         : false !default;
+$inuit-enable-layout--large         : false !default;
+$inuit-enable-layout--huge          : false !default;
+$inuit-enable-layout--flush         : false !default;
+$inuit-enable-layout--rev           : false !default;
+$inuit-enable-layout--middle        : false !default;
+$inuit-enable-layout--bottom        : false !default;
+$inuit-enable-layout--full          : false !default;
+$inuit-enable-layout--right         : false !default;
+$inuit-enable-layout--center        : false !default;
+
+$inuit-enable-layout__item--full    : false !default;
+$inuit-enable-layout__item--center  : false !default;
+$inuit-enable-layout__item--bottom  : false !default;
 
 
 
@@ -49,30 +53,33 @@ $inuit-global-border-box: false !default;
    */
   .#{$inuit-layout-namespace}layout,
   %#{$inuit-layout-namespace}layout {
+      display: flex; /* [1] */
+      flex-wrap: wrap;
       list-style: none;
-      margin:  0;
-      padding: 0;
+      margin: 0;
       margin-left: -$inuit-layout-gutter;
+      padding: 0;
   }
   
       /**
-       * 1. Cause columns to stack side-by-side.
-       * 2. Space columns apart.
-       * 3. Align columns to the tops of each other.
-       * 4. Full-width unless told to behave otherwise.
-       * 5. Required to combine fluid widths and fixed gutters.
+       * 1. Space columns apart.
+       * 2. Full-width unless told to behave otherwise.
+       * 3. Required to combine fluid widths and fixed gutters.
        */
       .#{$inuit-layout-namespace}layout__item,
       %#{$inuit-layout-namespace}layout__item {
-          display: inline-block; /* [1] */
-          padding-left: $inuit-layout-gutter; /* [2] */
-          vertical-align: top; /* [3] */
-          width: 100%; /* [4] */
+          padding-left: $inuit-layout-gutter; /* [1] */
+          flex: 1; /* [2] */
+          flex-basis: 10em;
+          
+          @include media-query(desk) {
+            flex-basis: 0;
+          }
   
           @if $inuit-global-border-box == false {
-              -webkit-box-sizing: border-box; /* [5] */
-                 -moz-box-sizing: border-box; /* [5] */
-                      box-sizing: border-box; /* [5] */
+              -webkit-box-sizing: border-box; /* [3] */
+                 -moz-box-sizing: border-box; /* [3] */
+                      box-sizing: border-box; /* [3] */
           }
   
       }
@@ -193,15 +200,7 @@ $inuit-global-border-box: false !default;
   
       .#{$inuit-layout-namespace}layout--rev,
       %#{$inuit-layout-namespace}layout--rev {
-          direction: rtl;
-          text-align: left;
-  
-          > .#{$inuit-layout-namespace}layout__item,
-          > %#{$inuit-layout-namespace}layout__item {
-              direction: ltr;
-              text-align: left;
-          }
-  
+          flex-direction: row-reverse;
       }
   
   }
@@ -218,12 +217,7 @@ $inuit-global-border-box: false !default;
   
       .#{$inuit-layout-namespace}layout--middle,
       %#{$inuit-layout-namespace}layout--middle {
-  
-          > .#{$inuit-layout-namespace}layout__item,
-          > %#{$inuit-layout-namespace}layout__item {
-              vertical-align: middle;
-          }
-  
+          align-items: center;
       }
   
   }
@@ -236,17 +230,25 @@ $inuit-global-border-box: false !default;
   
       .#{$inuit-layout-namespace}layout--bottom,
       %#{$inuit-layout-namespace}layout--bottom {
-  
-          > .#{$inuit-layout-namespace}layout__item,
-          > %#{$inuit-layout-namespace}layout__item {
-              vertical-align: bottom;
-          }
-  
+          align-items: flex-end;
       }
   
   }
   
+  @if ($inuit-enable-layout--full == true) {
   
+      /**
+       * Align layout items to the vertical bottoms of each other.
+       */
+  
+      .#{$inuit-layout-namespace}layout--full,
+      %#{$inuit-layout-namespace}layout--full {
+        .layout__item {
+          display: flex;
+        }
+      }
+  
+  }
   
   
   
@@ -258,13 +260,7 @@ $inuit-global-border-box: false !default;
   
       .#{$inuit-layout-namespace}layout--right,
       %#{$inuit-layout-namespace}layout--right {
-          text-align: right;
-  
-          > .#{$inuit-layout-namespace}layout__item,
-          > %#{$inuit-layout-namespace}layout__item {
-              text-align: left;
-          }
-  
+          justify-content: flex-end;
       }
   
   }
@@ -277,13 +273,7 @@ $inuit-global-border-box: false !default;
   
       .#{$inuit-layout-namespace}layout--center,
       %#{$inuit-layout-namespace}layout--center {
-          text-align: center;
-  
-          > .#{$inuit-layout-namespace}layout__item,
-          > %#{$inuit-layout-namespace}layout__item {
-              text-align: left;
-          }
-  
+          justify-content: center;
       }
   
   }
@@ -292,21 +282,44 @@ $inuit-global-border-box: false !default;
   
   
   
-  @if ($inuit-enable-layout--auto == true) {
+  @if ($inuit-enable-layout__item--center == true) {
   
       /**
-       * Cause layout items to take up a non-explicit amount of width.
+       * Make the layout items fill up from the center outward.
        */
-      .#{$inuit-layout-namespace}layout--auto,
-      %#{$inuit-layout-namespace}layout--auto {
   
-          > .#{$inuit-layout-namespace}layout__item,
-          > %#{$inuit-layout-namespace}layout__item {
-              width: auto;
-          }
-  
+      .#{$inuit-layout-namespace}layout__item--center,
+      %#{$inuit-layout-namespace}layout__item--center {
+          align-self: center;
       }
   
   }
+  
+  @if ($inuit-enable-layout__item--full == true) {
+  
+      /**
+       * Make the layout items fill up from the center outward.
+       */
+  
+      .#{$inuit-layout-namespace}layout__item--full,
+      %#{$inuit-layout-namespace}layout__item--full {
+          align-self: stretch;
+      }
+  
+  }
+  
+  @if ($inuit-enable-layout__item--bottom == true) {
+  
+      /**
+       * Make the layout items fill up from the center outward.
+       */
+  
+      .#{$inuit-layout-namespace}layout__item--bottom,
+      %#{$inuit-layout-namespace}layout__item--bottom {
+          align-self: flex-end;
+      }
+  
+  }
+
 
 }
