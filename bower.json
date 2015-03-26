@@ -25,5 +25,9 @@
   "dependencies": {
     "inuit-defaults": "~0.2.1",
     "px-functions-design": "git://github.sw.ge.com/pxc/px-functions-design.git#master"
+  },
+  "devDependencies": {
+    "px-code-design": "git://github.sw.ge.com/pxc/px-code-design.git#master",
+    "px-starter-kit": "git://github.sw.ge.com/pxc/px-starter-kit.git#master"
   }
 }
