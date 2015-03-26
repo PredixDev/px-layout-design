@@ -1,0 +1,62 @@
+$imported-once-files                : ();
+
+$inuit-base-font-size               : 15px;
+$inuit-base-line-height             : 20px;
+
+// Settings
+@import "../inuit-defaults/settings.defaults";
+
+// Tools
+@import "../px-functions-design/tools.functions";
+@import "../px-mixins-design/tools.mixins";
+
+// Generic
+@import "../px-normalize-design/generic.normalize";
+@import "../px-box-sizing-design/generic.box-sizing";
+@import "../px-helpers-design/generic.helpers";
+
+// Base
+@import "../px-viewport-design/base.viewport";
+@import "../px-flexbox-design/base.flexbox";
+@import "../px-typography-design/base.typography";
+@import "../px-code-design/base.code";
+
+// Trumps
+@import "../px-clearfix-design/trumps.clearfix";
+
+$inuit-enable-margins               : true;
+$inuit-enable-margins--large        : true;
+$inuit-enable-margins--huge         : true;
+
+@import "../px-spacing-responsive-design/trumps.spacing-responsive";
+@import "../px-widths-responsive-design/trumps.widths-responsive";
+
+// Buttons
+
+$inuit-enable-layout--tiny          : true;
+$inuit-enable-layout--small         : true;
+$inuit-enable-layout--large         : true;
+$inuit-enable-layout--huge          : true;
+$inuit-enable-layout--flush         : true;
+$inuit-enable-layout--rev           : true;
+$inuit-enable-layout--middle        : true;
+$inuit-enable-layout--bottom        : true;
+$inuit-enable-layout--full          : true;
+$inuit-enable-layout--right         : true;
+$inuit-enable-layout--center        : true;
+
+$inuit-enable-layout__item--full    : true;
+$inuit-enable-layout__item--center  : true;
+$inuit-enable-layout__item--bottom  : true;
+
+@import "../objects.layout";
+
+.layout__item {
+  margin-bottom: $inuit-layout-gutter;
+  p {
+    margin: 0;
+    padding: $inuit-base-spacing-unit;
+    text-align: center;
+    background: rgba(147,128,108,.1);
+  }
+}
