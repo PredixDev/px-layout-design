@@ -28,6 +28,7 @@
   },
   "devDependencies": {
     "px-code-design": "git://github.sw.ge.com/pxc/px-code-design.git#master",
+    "px-list-bare-design": "git://github.sw.ge.com/pxc/px-list-bare-design.git#master",
     "px-starter-kit": "git://github.sw.ge.com/pxc/px-starter-kit.git#master"
   }
 }

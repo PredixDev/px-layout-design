@@ -21,12 +21,17 @@ $inuit-base-line-height             : 20px;
 @import "../px-typography-design/base.typography";
 @import "../px-code-design/base.code";
 
+// Objects
+@import "../px-list-bare-design/objects.list-bare";
+
 // Trumps
 @import "../px-clearfix-design/trumps.clearfix";
 
 $inuit-enable-margins               : true;
+$inuit-enable-margins--none         : true;
 $inuit-enable-margins--large        : true;
 $inuit-enable-margins--huge         : true;
+$inuit-enable-margins--small        : true;
 
 @import "../px-spacing-responsive-design/trumps.spacing-responsive";
 @import "../px-widths-responsive-design/trumps.widths-responsive";
@@ -53,10 +58,24 @@ $inuit-enable-layout__item--bottom  : true;
 
 .layout__item {
   margin-bottom: $inuit-layout-gutter;
-  p {
+  p, nav {
     margin: 0;
+    width: 100%;
     padding: $inuit-base-spacing-unit;
-    text-align: center;
     background: rgba(147,128,108,.1);
+  }
+  p {
+    text-align: center;
+  }
+}
+
+.toggle {
+  + div .layout__item:first-child {
+    width: 10%;
+    flex: none;
+    transition: width 0.5s ease;
+  }
+  &:checked + div .layout__item:first-child {
+    width: 25%;
   }
 }
