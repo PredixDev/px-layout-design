@@ -13,7 +13,7 @@
     "layout"
   ],
   "license": "Apache 2",
-  "homepage": "git://github.sw.ge.com/pxc/px-layout-design.git",
+  "homepage": "git://github.sw.ge.com/PXd/px-layout-design.git",
   "private": true,
   "ignore": [
     "**/.*",
@@ -24,11 +24,11 @@
   ],
   "dependencies": {
     "inuit-defaults": "~0.2.1",
-    "px-functions-design": "git://github.sw.ge.com/pxc/px-functions-design.git#master"
+    "px-functions-design": "git://github.sw.ge.com/PXd/px-functions-design.git#master"
   },
   "devDependencies": {
-    "px-code-design": "git://github.sw.ge.com/pxc/px-code-design.git#master",
-    "px-list-bare-design": "git://github.sw.ge.com/pxc/px-list-bare-design.git#master",
-    "px-starter-kit": "git://github.sw.ge.com/pxc/px-starter-kit.git#master"
+    "px-code-design": "git://github.sw.ge.com/PXd/px-code-design.git#master",
+    "px-list-bare-design": "git://github.sw.ge.com/PXd/px-list-bare-design.git#master",
+    "px-starter-kit": "git://github.sw.ge.com/PXd/px-starter-kit.git#master"
   }
 }
