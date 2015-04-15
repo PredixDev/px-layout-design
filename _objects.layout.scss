@@ -15,7 +15,7 @@
 // Predefine the variables below in order to alter and enable specific features.
 $inuit-layout-namespace             : $inuit-namespace !default;
 
-$inuit-layout-gutter                : quarter($inuit-base-spacing-unit) !default;
+$inuit-layout-gutter                : $inuit-base-spacing-unit !default;
 $inuit-layout-gutter--tiny          : quarter($inuit-layout-gutter) !default;
 $inuit-layout-gutter--small         : halve($inuit-layout-gutter) !default;
 $inuit-layout-gutter--large         : double($inuit-layout-gutter) !default;
