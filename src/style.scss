@@ -13,6 +13,7 @@ $imported-once-files                : ();
 @import "../px-helpers-design/generic.helpers";
 
 // Base
+$desk-wide-width    : 65.4rem;
 @import "../px-viewport-design/base.viewport";
 @import "../px-flexbox-design/base.flexbox";
 @import "../px-typography-design/base.typography";
@@ -59,7 +60,7 @@ $inuit-enable-layout__item--bottom  : true;
     margin: 0;
     width: 100%;
     padding: $inuit-base-spacing-unit;
-    background: rgba(147,128,108,.1);
+    background: rgba(0,0,0,.1);
   }
   p {
     text-align: center;

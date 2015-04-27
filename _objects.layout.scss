@@ -15,11 +15,7 @@
 // Predefine the variables below in order to alter and enable specific features.
 $inuit-layout-namespace             : $inuit-namespace !default;
 
-$inuit-layout-gutter                : $inuit-base-spacing-unit !default;
-$inuit-layout-gutter--tiny          : quarter($inuit-layout-gutter) !default;
-$inuit-layout-gutter--small         : halve($inuit-layout-gutter) !default;
-$inuit-layout-gutter--large         : double($inuit-layout-gutter) !default;
-$inuit-layout-gutter--huge          : quadruple($inuit-layout-gutter) !default;
+$inuit-layout-min-width             : 300px !default;
 
 $inuit-enable-layout--tiny          : false !default;
 $inuit-enable-layout--small         : false !default;
@@ -57,7 +53,7 @@ $inuit-global-border-box: false !default;
       flex-wrap: wrap;
       list-style: none;
       margin: 0;
-      margin-left: -$inuit-layout-gutter;
+      margin-left: -$inuit-base-spacing-unit;
       padding: 0;
   }
   
@@ -68,11 +64,19 @@ $inuit-global-border-box: false !default;
        */
       .#{$inuit-layout-namespace}layout__item,
       %#{$inuit-layout-namespace}layout__item {
-          padding-left: $inuit-layout-gutter; /* [1] */
+          padding-left: $inuit-base-spacing-unit; /* [1] */
           flex: 1; /* [2] */
-          flex-basis: 10em;
+          flex-basis: calculateRem($inuit-layout-min-width);
           
-          @include media-query(desk) {
+          &:nth-last-child(-n+3):first-child,
+          &:nth-last-child(-n+3):first-child ~ .layout__item {
+            flex-basis: calculateRem($inuit-layout-min-width * 2);
+            @include media-query(desk-wide) {
+              flex-basis: 0;
+            }
+          }
+          
+          @include media-query(desk-wide) {
             flex-basis: 0;
           }
   
@@ -96,11 +100,11 @@ $inuit-global-border-box: false !default;
   
       .#{$inuit-layout-namespace}layout--tiny,
       %#{$inuit-layout-namespace}layout--tiny {
-          margin-left: -($inuit-layout-gutter--tiny);
+          margin-left: -($inuit-base-spacing-unit--tiny);
   
           > .#{$inuit-layout-namespace}layout__item,
           > %#{$inuit-layout-namespace}layout__item {
-              padding-left: $inuit-layout-gutter--tiny;
+              padding-left: $inuit-base-spacing-unit--tiny;
           }
   
       }
@@ -115,11 +119,11 @@ $inuit-global-border-box: false !default;
   
       .#{$inuit-layout-namespace}layout--small,
       %#{$inuit-layout-namespace}layout--small {
-          margin-left: -($inuit-layout-gutter--small);
+          margin-left: -($inuit-base-spacing-unit--small);
   
           > .#{$inuit-layout-namespace}layout__item,
           > %#{$inuit-layout-namespace}layout__item {
-              padding-left: $inuit-layout-gutter--small;
+              padding-left: $inuit-base-spacing-unit--small;
           }
   
       }
@@ -134,11 +138,11 @@ $inuit-global-border-box: false !default;
   
       .#{$inuit-layout-namespace}layout--large,
       %#{$inuit-layout-namespace}layout--large {
-          margin-left: -($inuit-layout-gutter--large);
+          margin-left: -($inuit-base-spacing-unit--large);
   
           > .#{$inuit-layout-namespace}layout__item,
           > %#{$inuit-layout-namespace}layout__item {
-              padding-left: $inuit-layout-gutter--large;
+              padding-left: $inuit-base-spacing-unit--large;
           }
   
       }
@@ -153,11 +157,11 @@ $inuit-global-border-box: false !default;
   
       .#{$inuit-layout-namespace}layout--huge,
       %#{$inuit-layout-namespace}layout--huge {
-          margin-left: -($inuit-layout-gutter--huge);
+          margin-left: -($inuit-base-spacing-unit--huge);
   
           > .#{$inuit-layout-namespace}layout__item,
           > %#{$inuit-layout-namespace}layout__item {
-              padding-left: $inuit-layout-gutter--huge;
+              padding-left: $inuit-base-spacing-unit--huge;
           }
   
       }
