@@ -247,7 +247,7 @@ $inuit-global-border-box: false !default;
   
       .#{$inuit-layout-namespace}layout--full,
       %#{$inuit-layout-namespace}layout--full {
-        .layout__item {
+        > .layout__item {
           display: flex;
         }
       }
