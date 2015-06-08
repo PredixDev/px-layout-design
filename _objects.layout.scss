@@ -1,46 +1,71 @@
-/*------------------------------------*\
-    #PX-LAYOUT-DESIGN
-\*------------------------------------*/
-
-@import '../px-defaults-design/settings.defaults';
-@import '../px-functions-design/tools.functions';
+////
+/// PX-LAYOUT-DESIGN
+/// Defines grid layout
+/// @group px-layout-design
+////
 
 /**
  * The Predix Experience layout system uses `box-sizing: border-box;` and
  * `display: flex;` to create an extremely powerful, flexible
- * alternative to the traditional grid system. Combine the layout items with
- * the widths found in `trumps.widths`.
+ * alternative to the traditional grid system. The number of `.layout__items`
+ * inside of each `.layout` will flexibly resize if the viewport changes.
+ * You do not need to set widths on `.layout__item[s]` for the grid to function.
+ * However, if you wish, you can override default grid behavior by assigning
+ * widths to layout items with the classes found in `trumps.widths`.
  */
 
-// Predefine the variables below in order to alter and enable specific features.
-$inuit-layout-namespace             : $inuit-namespace !default;
+@import '../px-defaults-design/settings.defaults';
 
-$inuit-layout-min-width             : 300px !default;
+/// @type String [default] - Prepend value for all generated classes
+$inuit-layout-namespace                                                 : $inuit-namespace !default;
 
-$inuit-enable-layout--tiny          : false !default;
-$inuit-enable-layout--small         : false !default;
-$inuit-enable-layout--large         : false !default;
-$inuit-enable-layout--huge          : false !default;
-$inuit-enable-layout--flush         : false !default;
-$inuit-enable-layout--rev           : false !default;
-$inuit-enable-layout--middle        : false !default;
-$inuit-enable-layout--bottom        : false !default;
-$inuit-enable-layout--full          : false !default;
-$inuit-enable-layout--right         : false !default;
-$inuit-enable-layout--center        : false !default;
+/// @type Number [default] - Minimum width of individual layout item
+$inuit-layout-min-width                                                 : 300px !default;
 
-$inuit-enable-layout__item--full    : false !default;
-$inuit-enable-layout__item--center  : false !default;
-$inuit-enable-layout__item--bottom  : false !default;
+/// @type Boolean [default] - Produce CSS for layout with tiny gutters between layout items?
+$inuit-enable-layout--tiny                                              : false !default;
 
+/// @type Boolean [default] - Produce CSS for layout with small gutters between layout items?
+$inuit-enable-layout--small                                             : false !default;
 
+/// @type Boolean [default] - Produce CSS for layout with large gutters between layout items?
+$inuit-enable-layout--large                                             : false !default;
 
+/// @type Boolean [default] - Produce CSS for layout with huge gutters between layout items?
+$inuit-enable-layout--huge                                              : false !default;
 
+/// @type Boolean [default] - Produce CSS for layout with no gutters between layout items?
+$inuit-enable-layout--flush                                             : false !default;
 
-// Here we set a variable assuming that `box-sizing: border-box;` is not set
-// globally. If it has been previously been defined, the following variable will
-// be overriden and will be set to `true`.
-$inuit-global-border-box: false !default;
+/// @type Boolean [default] - Produce CSS for layout items reversed?
+$inuit-enable-layout--rev                                               : false !default;
+
+/// @type Boolean [default] - Produce CSS to align layout items to the vertical centers of each other?
+$inuit-enable-layout--middle                                            : false !default;
+
+/// @type Boolean [default] - Produce CSS to align layout items to the vertical bottoms of each other?
+$inuit-enable-layout--bottom                                            : false !default;
+
+/// @type Boolean [default] - Produce CSS to align layout items to all be the same height?
+$inuit-enable-layout--full                                              : false !default;
+
+/// @type Boolean [default] - Produce CSS to make layout items fill up from the right hand side?
+$inuit-enable-layout--right                                             : false !default;
+
+/// @type Boolean [default] - Produce CSS to make the layout items fill up from the center outward?
+$inuit-enable-layout--center                                            : false !default;
+
+/// @type Boolean [default] - Produce CSS to make an individual layout item fill up the height of its layout?
+$inuit-enable-layout__item--full                                        : false !default;
+
+/// @type Boolean [default] - Produce CSS to make an individual layout item fill up from the center vertically?
+$inuit-enable-layout__item--center                                      : false !default;
+
+/// @type Boolean [default] - Produce CSS to make an individual layout item fill up from the bottom up?
+$inuit-enable-layout__item--bottom                                      : false !default;
+
+/// @type Boolean [default] - Set a variable assuming that `box-sizing  : border-box;` is not set globally. If it has been previously been defined, the following variable will be overriden and will be set to `true`.
+$inuit-global-border-box                                                : false !default;
 
 @if import-once('objects.layout') {
   
@@ -68,6 +93,14 @@ $inuit-global-border-box: false !default;
           flex: 1; /* [2] */
           flex-basis: calculateRem($inuit-layout-min-width);
           
+          &:nth-last-child(-n+4):first-child,
+          &:nth-last-child(-n+4):first-child ~ .layout__item {
+            flex-basis: calculateRem($inuit-layout-min-width * 1.5);
+            @include media-query(desk-wide) {
+              flex-basis: 0;
+            }
+          }
+          
           &:nth-last-child(-n+3):first-child,
           &:nth-last-child(-n+3):first-child ~ .layout__item {
             flex-basis: calculateRem($inuit-layout-min-width * 2);
@@ -81,9 +114,7 @@ $inuit-global-border-box: false !default;
           }
   
           @if $inuit-global-border-box == false {
-              -webkit-box-sizing: border-box; /* [3] */
-                 -moz-box-sizing: border-box; /* [3] */
-                      box-sizing: border-box; /* [3] */
+            box-sizing: border-box; /* [3] */
           }
   
       }
@@ -242,7 +273,7 @@ $inuit-global-border-box: false !default;
   @if ($inuit-enable-layout--full == true) {
   
       /**
-       * Align layout items to the vertical bottoms of each other.
+       * Align layout items to all be the same height.
        */
   
       .#{$inuit-layout-namespace}layout--full,
@@ -253,8 +284,6 @@ $inuit-global-border-box: false !default;
       }
   
   }
-  
-  
   
   @if ($inuit-enable-layout--right == true) {
   
@@ -284,12 +313,23 @@ $inuit-global-border-box: false !default;
   
   
   
+  @if ($inuit-enable-layout__item--full == true) {
+
+    /**
+     * Make an individual layout item fill up the height of its layout.
+     */
+
+    .#{$inuit-layout-namespace}layout__item--full,
+    %#{$inuit-layout-namespace}layout__item--full {
+        align-self: stretch;
+    }
   
+  }  
   
   @if ($inuit-enable-layout__item--center == true) {
   
       /**
-       * Make the layout items fill up from the center outward.
+       * Make an individual layout item fill up from the center vertically.
        */
   
       .#{$inuit-layout-namespace}layout__item--center,
@@ -299,23 +339,10 @@ $inuit-global-border-box: false !default;
   
   }
   
-  @if ($inuit-enable-layout__item--full == true) {
-  
-      /**
-       * Make the layout items fill up from the center outward.
-       */
-  
-      .#{$inuit-layout-namespace}layout__item--full,
-      %#{$inuit-layout-namespace}layout__item--full {
-          align-self: stretch;
-      }
-  
-  }
-  
   @if ($inuit-enable-layout__item--bottom == true) {
   
       /**
-       * Make the layout items fill up from the center outward.
+       * Make an individual layout item fill up from the bottom up.
        */
   
       .#{$inuit-layout-namespace}layout__item--bottom,
