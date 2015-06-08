@@ -1,10 +1,10 @@
 {
   "name": "px-layout-design",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "authors": [
     "General Electric"
   ],
-  "description": "Predix Experience grid system",
+  "description": "Predix Experience layout engine",
   "main": "_objects.layout.scss",
   "keywords": [
     "px",
@@ -13,7 +13,7 @@
     "layout"
   ],
   "license": "Apache 2",
-  "homepage": "git://github.sw.ge.com/PXd/px-layout-design.git",
+  "homepage": "git://github.build.ge.com/PXd/px-layout-design.git",
   "private": true,
   "ignore": [
     "**/.*",
@@ -23,11 +23,11 @@
     "tests"
   ],
   "dependencies": {
-    "px-defaults-design": "git://github.sw.ge.com/PXd/px-defaults-design.git#~0.1.0"
+    "px-defaults-design": "git://github.build.ge.com/PXd/px-defaults-design.git#~0.1.0"
   },
   "devDependencies": {
-    "px-code-design": "git://github.sw.ge.com/PXd/px-code-design.git#~0.1.0",
-    "px-colors-design": "git://github.sw.ge.com/PXd/px-colors-design.git#~0.2.0",
-    "px-starter-kit-design": "git://github.sw.ge.com/PXd/px-starter-kit-design.git#~0.2.0"
+    "px-code-design": "git://github.build.ge.com/PXd/px-code-design.git#~0.1.0",
+    "px-colors-design": "git://github.build.ge.com/PXd/px-colors-design.git#~0.2.0",
+    "px-starter-kit-design": "git://github.build.ge.com/PXd/px-starter-kit-design.git#~0.2.0"
   }
 }

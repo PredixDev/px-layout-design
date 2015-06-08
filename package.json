@@ -1,14 +1,14 @@
 {
-  "name": "px-buttons-design",
-  "version": "0.2.0",
-  "description": "Button object styles for Predix Experience",
+  "name": "px-layout-design",
+  "version": "0.2.1",
+  "description": "Predix Experience layout engine",
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.sw.ge.com/PXd/px-buttons-design.git"
+    "url": "git://github.build.ge.com/PXd/px-layout-design.git"
   },
   "author": "General Electric",
   "license": "Apache 2",
