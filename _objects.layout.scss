@@ -17,55 +17,55 @@
 @import '../px-defaults-design/settings.defaults';
 
 /// @type String [default] - Prepend value for all generated classes
-$inuit-layout-namespace                                                 : $inuit-namespace !default;
+$inuit-layout-namespace             : $inuit-namespace !default;
 
 /// @type Number [default] - Minimum width of individual layout item
-$inuit-layout-min-width                                                 : 300px !default;
+$inuit-layout-min-width             : 300px !default;
 
 /// @type Boolean [default] - Produce CSS for layout with tiny gutters between layout items?
-$inuit-enable-layout--tiny                                              : false !default;
+$inuit-enable-layout--tiny          : false !default;
 
 /// @type Boolean [default] - Produce CSS for layout with small gutters between layout items?
-$inuit-enable-layout--small                                             : false !default;
+$inuit-enable-layout--small         : false !default;
 
 /// @type Boolean [default] - Produce CSS for layout with large gutters between layout items?
-$inuit-enable-layout--large                                             : false !default;
+$inuit-enable-layout--large         : false !default;
 
 /// @type Boolean [default] - Produce CSS for layout with huge gutters between layout items?
-$inuit-enable-layout--huge                                              : false !default;
+$inuit-enable-layout--huge          : false !default;
 
 /// @type Boolean [default] - Produce CSS for layout with no gutters between layout items?
-$inuit-enable-layout--flush                                             : false !default;
+$inuit-enable-layout--flush         : false !default;
 
 /// @type Boolean [default] - Produce CSS for layout items reversed?
-$inuit-enable-layout--rev                                               : false !default;
+$inuit-enable-layout--rev           : false !default;
 
 /// @type Boolean [default] - Produce CSS to align layout items to the vertical centers of each other?
-$inuit-enable-layout--middle                                            : false !default;
+$inuit-enable-layout--middle        : false !default;
 
 /// @type Boolean [default] - Produce CSS to align layout items to the vertical bottoms of each other?
-$inuit-enable-layout--bottom                                            : false !default;
+$inuit-enable-layout--bottom        : false !default;
 
 /// @type Boolean [default] - Produce CSS to align layout items to all be the same height?
-$inuit-enable-layout--full                                              : false !default;
+$inuit-enable-layout--full          : false !default;
 
 /// @type Boolean [default] - Produce CSS to make layout items fill up from the right hand side?
-$inuit-enable-layout--right                                             : false !default;
+$inuit-enable-layout--right         : false !default;
 
 /// @type Boolean [default] - Produce CSS to make the layout items fill up from the center outward?
-$inuit-enable-layout--center                                            : false !default;
+$inuit-enable-layout--center        : false !default;
 
 /// @type Boolean [default] - Produce CSS to make an individual layout item fill up the height of its layout?
-$inuit-enable-layout__item--full                                        : false !default;
+$inuit-enable-layout__item--full    : false !default;
 
 /// @type Boolean [default] - Produce CSS to make an individual layout item fill up from the center vertically?
-$inuit-enable-layout__item--center                                      : false !default;
+$inuit-enable-layout__item--center  : false !default;
 
 /// @type Boolean [default] - Produce CSS to make an individual layout item fill up from the bottom up?
-$inuit-enable-layout__item--bottom                                      : false !default;
+$inuit-enable-layout__item--bottom  : false !default;
 
 /// @type Boolean [default] - Set a variable assuming that `box-sizing  : border-box;` is not set globally. If it has been previously been defined, the following variable will be overriden and will be set to `true`.
-$inuit-global-border-box                                                : false !default;
+$inuit-global-border-box            : false !default;
 
 @if import-once('objects.layout') {
   
