@@ -14,12 +14,30 @@
         <p>
           To use this module, follow the instructions in the
           <a href=https://github.build.ge.com/PXd/px-layout-design>README</a>.
+          <!-- build:remove -->
+          (For background on PXd, read the
+          <a href=https://github.build.ge.com/PXd/px-getting-started>Getting Started</a>
+          documentation.)
+          <!-- /build -->
         </p>
-        <a class=btn href=https://github.build.ge.com/PXd/px-layout-design>
+        <a class="btn btn--primary" href=https://github.build.ge.com/PXd/px-layout-design>
           <i class="fa fa-github u-mr--"></i>
           px-layout-design
         </a>
       </div>
+      <h2>How to Use</h2>
+      <p>Install via command line:</p>
+      <figure class="code u-mb+">
+        <code>
+          bower install --save https://github.build.ge.com/PXd/px-layout-design.git
+        </code>
+      </figure>
+      <p>Add to component Sass file:</p>
+      <figure class="code u-mb++">
+        <code>
+          @import "px-layout-design/_objects.layout.scss";
+        </code>
+      </figure>
       <h2>Auto sizing</h2>
       <div class="code u-mb+">
         <code>
@@ -142,6 +160,18 @@
         </div> 
       </div>
       <h2>Reverse (right to left) layout</h2>
+      <h3>Sass Flag</h3>
+      <figure class="code">
+        <code>
+          $inuit-enable-layout--rev : true;
+        </code>
+      </figure>
+      <small>
+        Flag must be set before
+        <code class="code code--inline">@import</code>
+        in component Sass file.
+      </small>
+      <h3>HTML</h3>
       <div class="code u-mb+">
         <code>
           &lt;div class="layout layout--rev"&gt;
@@ -170,6 +200,18 @@
         </div>
       </div>
       <h2>Vertical centering</h2>
+      <h3>Sass Flag</h3>
+      <figure class="code">
+        <code>
+          $inuit-enable-layout--middle : true;
+        </code>
+      </figure>
+      <small>
+        Flag must be set before
+        <code class="code code--inline">@import</code>
+        in component Sass file.
+      </small>
+      <h3>HTML</h3>
       <div class="code u-mb+">
         <code>
           &lt;div class="layout layout--middle"&gt;
@@ -195,6 +237,18 @@
         </div>
       </div>
       <h2>Bottom aligned</h2>
+      <h3>Sass Flag</h3>
+      <figure class="code">
+        <code>
+          $inuit-enable-layout--bottom : true;
+        </code>
+      </figure>
+      <small>
+        Flag must be set before
+        <code class="code code--inline">@import</code>
+        in component Sass file.
+      </small>
+      <h3>HTML</h3>
       <div class="code u-mb+">
         <code>
           &lt;div class="layout layout--bottom"&gt;
@@ -220,6 +274,18 @@
         </div>
       </div>
       <h2>Full height layout</h2>
+      <h3>Sass Flag</h3>
+      <figure class="code">
+        <code>
+          $inuit-enable-layout--full : true;
+        </code>
+      </figure>
+      <small>
+        Flag must be set before
+        <code class="code code--inline">@import</code>
+        in component Sass file.
+      </small>
+      <h3>HTML</h3>
       <div class="code u-mb+">
         <code>
           &lt;div class="layout layout--full"&gt;
@@ -245,6 +311,22 @@
         </div>
       </div>
       <h2>Mixed vertical alignment</h2>
+      <h3>Sass Flag</h3>
+      <figure class="code">
+        <code>
+          $inuit-enable-layout--full&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: true;
+          <br>
+          $inuit-enable-layout__item--center : true;
+          <br>
+          $inuit-enable-layout__item--bottom : true;
+        </code>
+      </figure>
+      <small>
+        Flag must be set before
+        <code class="code code--inline">@import</code>
+        in component Sass file.
+      </small>
+      <h3>HTML</h3>
       <div class="code u-mb+">
         <code>
           &lt;div class="layout layout--full"&gt;
@@ -275,6 +357,18 @@
         </div>
       </div>
       <h2>Right aligned</h2>
+      <h3>Sass Flag</h3>
+      <figure class="code">
+        <code>
+          $inuit-enable-layout--right : true;
+        </code>
+      </figure>
+      <small>
+        Flag must be set before
+        <code class="code code--inline">@import</code>
+        in component Sass file.
+      </small>
+      <h3>HTML</h3>
       <div class="code u-mb+">
         <code>
           &lt;div class="layout layout--right"&gt;
@@ -300,6 +394,18 @@
         </div>
       </div>
       <h2>Center aligned</h2>
+      <h3>Sass Flag</h3>
+      <figure class="code">
+        <code>
+          $inuit-enable-layout--center : true;
+        </code>
+      </figure>
+      <small>
+        Flag must be set before
+        <code class="code code--inline">@import</code>
+        in component Sass file.
+      </small>
+      <h3>HTML</h3>
       <div class="code u-mb+">
         <code>
           &lt;div class="layout layout--center"&gt;
