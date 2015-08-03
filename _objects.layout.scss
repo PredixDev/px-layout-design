@@ -78,46 +78,48 @@ $inuit-global-border-box            : false !default;
     margin: 0;
     margin-left: -$inuit-base-spacing-unit;
     padding: 0;
-}
+    
+    > {
 
-    /**
-     * 1. Space columns apart.
-     * 2. Full-width unless told to behave otherwise.
-     * 3. Required to combine fluid widths and fixed gutters.
-     */
-    .#{$inuit-layout-namespace}layout__item,
-    %#{$inuit-layout-namespace}layout__item {
-        padding-left: $inuit-base-spacing-unit; /* [1] */
-        flex: 1; /* [2] */
-        flex-basis: calculateRem($inuit-layout-min-width);
-        
-        &:nth-last-child(-n+4):first-child,
-        &:nth-last-child(-n+4):first-child ~ .layout__item {
-          flex-basis: calculateRem($inuit-layout-min-width * 1.5);
+      /**
+       * 1. Space columns apart.
+       * 2. Full-width unless told to behave otherwise.
+       * 3. Required to combine fluid widths and fixed gutters.
+       */
+      .#{$inuit-layout-namespace}layout__item,
+      %#{$inuit-layout-namespace}layout__item {
+          padding-left: $inuit-base-spacing-unit; /* [1] */
+          flex: 1; /* [2] */
+          flex-basis: calculateRem($inuit-layout-min-width);
+          
+          &:nth-last-child(-n+4):first-child,
+          &:nth-last-child(-n+4):first-child ~ .layout__item {
+            flex-basis: calculateRem($inuit-layout-min-width * 1.5);
+            @include media-query(desk-wide) {
+              flex-basis: 0;
+            }
+          }
+          
+          &:nth-last-child(-n+3):first-child,
+          &:nth-last-child(-n+3):first-child ~ .layout__item {
+            flex-basis: calculateRem($inuit-layout-min-width * 2);
+            @include media-query(desk-wide) {
+              flex-basis: 0;
+            }
+          }
+          
           @include media-query(desk-wide) {
             flex-basis: 0;
           }
-        }
-        
-        &:nth-last-child(-n+3):first-child,
-        &:nth-last-child(-n+3):first-child ~ .layout__item {
-          flex-basis: calculateRem($inuit-layout-min-width * 2);
-          @include media-query(desk-wide) {
-            flex-basis: 0;
+  
+          @if $inuit-global-border-box == false {
+            box-sizing: border-box; /* [3] */
           }
-        }
-        
-        @include media-query(desk-wide) {
-          flex-basis: 0;
-        }
-
-        @if $inuit-global-border-box == false {
-          box-sizing: border-box; /* [3] */
-        }
-
+  
+      }
     }
 
-
+}
 
 
 
