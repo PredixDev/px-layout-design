@@ -2,13 +2,10 @@
 
 The Predix Experience Layout module defines the "grid," or more accurately the layout engine, for Predix Experience. This module is a fork of the [inuitcss Layout module](https://github.com/inuitcss/objects.layout). Main features of the grid are its inherent fluidity, and responsiveness which is based on each `.layout__item` shrinking to a minimum size rather then having their size based on the viewport of the browser.
 
-## Demo
 
-You can review the Layout engine and recommended markup: https://github.com/pages/PredixDev/px-layout-design
 
-## Sass Documentation
 
-You can review Sass Documentation here: https://github.com/pages/PredixDev/px-layout-design/sassdoc
+
 
 ## Dependency
 
