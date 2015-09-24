@@ -15,6 +15,7 @@
  */
 
 @import 'px-defaults-design/_settings.defaults.scss';
+@import 'inuit-responsive-tools/_tools.responsive.scss';
 
 /// @type String [default] - Prepend value for all generated classes
 $inuit-layout-namespace             : $inuit-namespace !default;
