@@ -1,6 +1,6 @@
 {
   "name": "px-layout-design",
-  "version": "0.3.9",
+  "version": "0.3.10",
   "description": "Predix Experience layout engine",
   "private": true,
   "scripts": {
