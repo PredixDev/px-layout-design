@@ -12,7 +12,6 @@
     "grid",
     "layout"
   ],
-  "license": "Apache 2",
   "homepage": "https://github.com/PredixDev/px-layout-design.git",
   "private": false,
   "ignore": [
