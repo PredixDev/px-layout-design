@@ -1,4 +1,4 @@
-v0.3.14
+v0.3.15
 ==============================
 * Updated dependencies
 * Updated boilerplate files
