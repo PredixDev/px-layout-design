@@ -1,3 +1,7 @@
+v0.3.16
+==============================
+* PR #3 which fixed import, also fixed dependencies
+
 v0.3.15
 ==============================
 * Updated dependencies
