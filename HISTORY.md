@@ -1,3 +1,7 @@
+v0.3.17
+==============================
+* Minor style canges to demo and added more discription in Use it in your project
+
 v0.3.16
 ==============================
 * PR #3 which fixed import, also fixed dependencies
