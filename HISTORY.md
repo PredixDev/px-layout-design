@@ -1,6 +1,10 @@
+v0.4.2
+==================
+* fix breakpoint per #4
+
 v0.4.1
 ==================
-* Update missed design depndencies
+* Update missed design dependencies
 
 v0.4.0
 ==================
