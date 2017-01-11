@@ -1,3 +1,7 @@
+v0.4.3
+==================
+* changing ghp.sh to account for Alpha releases
+
 v0.4.2
 ==================
 * fix breakpoint per #4
