@@ -51,7 +51,7 @@ $inuit-layout-min-width : 50px;
 @import "../_objects.layout.scss";
 
 .layout__item {
-  outline: 1px solid LightSkyBlue; 
+  outline: 1px solid var(--px-layout-demo-border-color, $gray4); 
 }
 
 // Trumps
