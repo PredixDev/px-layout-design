@@ -1,3 +1,7 @@
+v0.4.6
+==================
+* added examples to demo (#5)
+
 v0.4.5
 ==================
 * update demo page using px-demo classes
