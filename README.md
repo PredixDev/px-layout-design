@@ -2,7 +2,7 @@
 
 The Predix UI Layout module defines the "grid," or more accurately the layout engine, for Predix UI. This module is a fork of the [inuitcss Layout module](https://github.com/inuitcss/objects.layout). Main features of the grid are its inherent fluidity, and responsiveness which is based on each `.layout__item` shrinking to a minimum size rather then having their size based on the viewport of the browser.
 
-## Dependency
+## Dependencies
 
 The px-layout-design module depends on one other Px module:
 
@@ -65,4 +65,4 @@ In this example, the initial `.layout__item` will take up one half of the width 
       </div>
     </div>
 
-view the full API [here](http://predixdev.github.io/px-layout-design/)
+View the full API [here](http://predixdev.github.io/px-layout-design/).
