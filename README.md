@@ -4,13 +4,13 @@ The Predix UI Layout module defines the "grid," or more accurately the layout en
 
 ## Dependencies
 
-The px-layout-design module depends on one other Px module:
+The `px-layout-design` module depends on one other Px module:
 
 * [px-defaults-design](https://github.com/PredixDev/px-defaults-design)
 
 ## Installation
 
-Install this module and its dependency using bower:
+Install this module and its dependencies using bower:
 
     bower install --save  px-layout-design
 
