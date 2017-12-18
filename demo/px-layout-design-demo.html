@@ -24,7 +24,7 @@
   selected-options="{{selectedOptions}}">
 
 <!-- 2: Set Options -->
-<px-sass-doc-option
+<px-sass-doc-option slot="options"
   option-name="Gutters"
   choose-with="dropdown"
   choices='[
@@ -38,7 +38,7 @@
   default-choice="regular (default)">
 </px-sass-doc-option>
 
-<px-sass-doc-option
+<px-sass-doc-option slot="options"
   option-name="Alignment"
   choose-with="dropdown"
   choices='[
@@ -49,12 +49,12 @@
   default-choice="left (default)">
 </px-sass-doc-option>
 
-<px-sass-doc-option
+<px-sass-doc-option slot="options"
   option-name="Reverse"
   choose-with="boolean">
 </px-sass-doc-option>
 
-<px-sass-doc-option
+<px-sass-doc-option slot="options"
   option-name="Vertical"
   choose-with="dropdown"
   choices='[
@@ -66,7 +66,7 @@
   default-choice="top (default)">
 </px-sass-doc-option>
 
-<px-sass-doc-option
+<px-sass-doc-option slot="options"
   option-name="Vertical (by Item)"
   choose-with="dropdown"
   choices='[
@@ -78,7 +78,7 @@
 </px-sass-doc-option>
 
 <!-- 3: Make HTML Demo -->
-<section data-slot="demoHTML">
+<section slot="demo-html">
 <div class$="{{layoutClasses}}">
   <div class$="{{layoutItemClasses}}">Layout Item 1</div>
   <div class$="{{layoutItemClasses}}">Layout Item 2. <br/> More text to show functionality.</div>
@@ -87,16 +87,16 @@
 </section>
 
 <!-- 4: Set Import Slot -->
-<section data-slot="import">
+<section slot="import">
 {{importCode}}
 </section>
 
 <!-- 5: Set Usage HTML -->
-<section data-slot="intro">
+<section slot="intro">
 
 </section>
 
-<section data-slot="usage">
+<section slot="usage">
 <h4>Basics:</h4>
 ```
 <!-- Layout - Parent element -->
